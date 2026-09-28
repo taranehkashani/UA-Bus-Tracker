@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+/* Leaflet Container reset */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #f8fafc;
+}
+
+/* Custom Tooltip */
+.custom-leaflet-tooltip {
+  background: rgba(255, 255, 255, 0.96) !important;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.12) !important;
+  padding: 6px 10px !important;
+  color: #0f172a !important;
+}
+
+.custom-leaflet-tooltip::before {
+  border-top-color: rgba(255, 255, 255, 0.96) !important;
+}
+
+/* Custom DivIcons */
+.custom-stop-divicon,
+.custom-bus-divicon,
+.custom-user-divicon,
+.custom-origin-divicon,
+.custom-dest-divicon {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Bus Marker */
+.bus-marker-container {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bus-marker-container:hover {
+  transform: scale(1.18);
+  z-index: 1000 !important;
+}
+
+.bus-halo {
+  position: absolute;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.bus-body {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+.bus-heading-indicator {
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  margin-left: -14px;
+  width: 28px;
+  height: 28px;
+  pointer-events: none;
+  transform-origin: center 23px;
+  transition: transform 0.3s ease-out;
+}
+
+.bus-svg-icon {
+  width: 14px;
+  height: 14px;
+}
+
+.bus-badge {
+  position: absolute;
+  bottom: -6px;
+  background: #0f172a;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 0 3px;
+  font-size: 9px;
+  line-height: 12px;
+  white-space: nowrap;
+}
+
+.bus-marker-active .bus-body {
+  border-color: #fde047;
+  box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.4);
+}
+
+/* Stop Marker */
+.stop-marker {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.stop-marker:hover .stop-circle {
+  transform: scale(1.3);
+}
+
+.stop-circle {
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-out;
+}
+
+.stop-name-tag {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* User Location */
+.user-location-marker {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-pulse {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.25);
+  animation: userPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.user-core {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #2563eb;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes userPing {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}

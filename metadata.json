@@ -1,0 +1,6 @@
+{
+  "name": "Crimson Ride - UA Campus Transit",
+  "description": "Live University of Alabama bus tracking, real-time stop arrival estimates, interactive campus transit map, and intelligent door-to-door trip planner.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
